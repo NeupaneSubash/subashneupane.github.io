@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Subash Neupane — Assistant Professor</title>
+<title>Subash Neupane — Assistant Professor, Meharry Medical College</title>
+<meta name="description" content="Subash Neupane is an Assistant Professor (Tenure-Track) in the Department of Computer Science and Data Science at Meharry Medical College. Research in Generative AI, NLP, Healthcare AI, and Cybersecurity.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -20,7 +21,6 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -31,7 +31,6 @@
     overflow-x: hidden;
   }
 
-  /* ── NOISE TEXTURE OVERLAY ── */
   body::before {
     content: '';
     position: fixed;
@@ -42,7 +41,6 @@
     opacity: 0.6;
   }
 
-  /* ── NAV ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -51,7 +49,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.4rem 4rem;
-    background: rgba(245, 242, 236, 0.85);
+    background: rgba(245, 242, 236, 0.88);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--rule);
   }
@@ -64,11 +62,7 @@
     color: var(--muted);
   }
 
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 
   .nav-links a {
     font-family: 'DM Mono', monospace;
@@ -94,7 +88,6 @@
   .nav-links a:hover { color: var(--ink); }
   .nav-links a:hover::after { transform: scaleX(1); }
 
-  /* ── HERO ── */
   #hero {
     min-height: 100vh;
     display: grid;
@@ -147,16 +140,14 @@
     margin-bottom: 0.2rem;
   }
 
-  h1 em {
-    font-style: italic;
-    color: var(--accent);
-  }
+  h1 em { font-style: italic; color: var(--accent); }
 
   .title-bar {
     display: flex;
     align-items: center;
     gap: 1rem;
     margin: 2rem 0;
+    flex-wrap: wrap;
   }
 
   .title-bar span {
@@ -177,11 +168,7 @@
     margin-bottom: 3rem;
   }
 
-  .hero-cta {
-    display: flex;
-    gap: 1.2rem;
-    flex-wrap: wrap;
-  }
+  .hero-cta { display: flex; gap: 1.2rem; flex-wrap: wrap; }
 
   .btn-primary {
     display: inline-flex;
@@ -203,7 +190,6 @@
   .btn-outline {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
     padding: 0.85rem 2rem;
     border: 1px solid var(--ink);
     color: var(--ink);
@@ -217,7 +203,6 @@
 
   .btn-outline:hover { background: var(--ink); color: var(--paper); transform: translateY(-1px); }
 
-  /* ── HERO RIGHT ── */
   .hero-right {
     display: flex;
     flex-direction: column;
@@ -256,11 +241,7 @@
     border: 1px solid var(--rule);
   }
 
-  .photo-placeholder svg {
-    width: 64px;
-    height: 64px;
-    opacity: 0.25;
-  }
+  .photo-placeholder svg { width: 64px; height: 64px; opacity: 0.25; }
 
   .photo-placeholder p {
     font-family: 'DM Mono', monospace;
@@ -272,17 +253,9 @@
     padding: 0 1rem;
   }
 
-  /* replace .photo-placeholder with actual <img> when ready */
-  .photo-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
   .hero-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0;
     width: 100%;
     max-width: 360px;
     border: 1px solid var(--rule);
@@ -315,7 +288,6 @@
     display: block;
   }
 
-  /* ── SECTION COMMON ── */
   section { padding: 6rem 4rem; }
 
   .section-header {
@@ -339,14 +311,8 @@
     letter-spacing: -0.01em;
   }
 
-  .section-rule {
-    flex: 1;
-    height: 1px;
-    background: var(--rule);
-    align-self: center;
-  }
+  .section-rule { flex: 1; height: 1px; background: var(--rule); align-self: center; }
 
-  /* ── RESEARCH ── */
   #research { background: var(--cream); }
 
   .research-grid {
@@ -378,10 +344,7 @@
 
   .research-card:hover::before { transform: scaleX(1); }
 
-  .card-icon {
-    font-size: 1.8rem;
-    margin-bottom: 1.2rem;
-  }
+  .card-icon { font-size: 1.8rem; margin-bottom: 1.2rem; }
 
   .research-card h3 {
     font-family: 'Cormorant Garamond', serif;
@@ -391,21 +354,9 @@
     line-height: 1.3;
   }
 
-  .research-card p {
-    font-size: 0.88rem;
-    line-height: 1.7;
-    color: var(--muted);
-  }
+  .research-card p { font-size: 0.88rem; line-height: 1.7; color: var(--muted); }
 
-  /* ── PUBLICATIONS ── */
-  #publications {}
-
-  .pub-filters {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 2.5rem;
-    flex-wrap: wrap;
-  }
+  .pub-filters { display: flex; gap: 0.5rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
 
   .filter-btn {
     padding: 0.4rem 1rem;
@@ -420,13 +371,9 @@
     transition: all 0.2s;
   }
 
-  .filter-btn.active, .filter-btn:hover {
-    background: var(--ink);
-    color: var(--paper);
-    border-color: var(--ink);
-  }
+  .filter-btn.active, .filter-btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
-  .pub-list { display: flex; flex-direction: column; gap: 0; }
+  .pub-list { display: flex; flex-direction: column; }
 
   .pub-item {
     display: grid;
@@ -435,7 +382,6 @@
     padding: 2rem 0;
     border-bottom: 1px solid var(--rule);
     align-items: start;
-    transition: background 0.2s;
   }
 
   .pub-item:first-child { border-top: 1px solid var(--rule); }
@@ -460,14 +406,10 @@
     font-size: 0.65rem;
     letter-spacing: 0.08em;
     color: var(--muted);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
   }
 
-  .pub-authors {
-    font-size: 0.82rem;
-    color: var(--muted);
-    font-style: italic;
-  }
+  .pub-authors { font-size: 0.82rem; color: var(--muted); font-style: italic; }
 
   .pub-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.6rem; }
 
@@ -497,7 +439,6 @@
 
   .pub-link:hover { color: var(--gold); }
 
-  /* ── TEACHING ── */
   #teaching { background: var(--cream); }
 
   .teaching-grid {
@@ -509,7 +450,6 @@
   .course-card {
     border: 1px solid var(--rule);
     padding: 2rem;
-    position: relative;
     background: var(--paper);
     transition: box-shadow 0.25s;
   }
@@ -532,12 +472,7 @@
     line-height: 1.3;
   }
 
-  .course-card p {
-    font-size: 0.85rem;
-    line-height: 1.65;
-    color: var(--muted);
-    margin-bottom: 1rem;
-  }
+  .course-card p { font-size: 0.85rem; line-height: 1.65; color: var(--muted); margin-bottom: 1rem; }
 
   .course-meta {
     display: flex;
@@ -548,26 +483,15 @@
     color: var(--muted);
   }
 
-  /* ── CV SECTION ── */
-  #cv {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    padding: 0;
-  }
+  #cv { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; }
 
-  .cv-left {
-    padding: 6rem 4rem;
-    background: var(--accent);
-    color: #fff;
-  }
-
+  .cv-left { padding: 6rem 4rem; background: var(--accent); color: #fff; }
   .cv-left .section-header { margin-bottom: 3rem; }
   .cv-left h2 { color: rgba(255,255,255,0.9); }
   .cv-left .section-num { color: rgba(184, 134, 11, 0.8); }
   .cv-left .section-rule { background: rgba(255,255,255,0.15); }
 
-  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .timeline { display: flex; flex-direction: column; }
 
   .timeline-item {
     display: grid;
@@ -595,11 +519,7 @@
     margin-bottom: 0.2rem;
   }
 
-  .tl-content p {
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.5;
-  }
+  .tl-content p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
 
   .cv-right {
     padding: 6rem 4rem;
@@ -616,11 +536,7 @@
     margin-bottom: 1.2rem;
   }
 
-  .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
+  .skills-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
   .skill-tag {
     padding: 0.4rem 1rem;
@@ -650,7 +566,6 @@
 
   .cv-download:hover { background: var(--accent); }
 
-  /* ── CONTACT ── */
   #contact {
     background: var(--ink);
     color: var(--paper);
@@ -674,12 +589,7 @@
   }
 
   .contact-items { display: flex; flex-direction: column; gap: 1.2rem; }
-
-  .contact-item {
-    display: flex;
-    gap: 1.2rem;
-    align-items: flex-start;
-  }
+  .contact-item { display: flex; gap: 1.2rem; align-items: flex-start; }
 
   .contact-icon {
     font-family: 'DM Mono', monospace;
@@ -691,17 +601,11 @@
     min-width: 60px;
   }
 
-  .contact-val {
-    font-size: 0.9rem;
-    color: rgba(245,242,236,0.6);
-    line-height: 1.5;
-  }
-
+  .contact-val { font-size: 0.9rem; color: rgba(245,242,236,0.6); line-height: 1.5; }
   .contact-val a { color: rgba(245,242,236,0.6); text-decoration: none; transition: color 0.2s; }
   .contact-val a:hover { color: var(--gold); }
 
   .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
-
   .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
 
   .form-group label {
@@ -712,8 +616,7 @@
     color: var(--gold);
   }
 
-  .form-group input,
-  .form-group textarea {
+  .form-group input, .form-group textarea {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.12);
     color: var(--paper);
@@ -726,11 +629,8 @@
     resize: vertical;
   }
 
-  .form-group input:focus,
-  .form-group textarea:focus { border-color: var(--gold); }
-
-  .form-group input::placeholder,
-  .form-group textarea::placeholder { color: rgba(245,242,236,0.2); }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(245,242,236,0.2); }
 
   .btn-send {
     padding: 0.9rem 2rem;
@@ -748,7 +648,6 @@
 
   .btn-send:hover { background: var(--gold-light); transform: translateY(-1px); }
 
-  /* ── FOOTER ── */
   footer {
     background: #0a0906;
     color: rgba(245,242,236,0.3);
@@ -764,7 +663,6 @@
   footer a { color: rgba(245,242,236,0.3); text-decoration: none; transition: color 0.2s; }
   footer a:hover { color: var(--gold); }
 
-  /* ── ANIMATIONS ── */
   .fade-up {
     opacity: 0;
     transform: translateY(24px);
@@ -772,38 +670,29 @@
   }
 
   .fade-up.visible { opacity: 1; transform: translateY(0); }
-
   .fade-up:nth-child(2) { transition-delay: 0.1s; }
   .fade-up:nth-child(3) { transition-delay: 0.2s; }
   .fade-up:nth-child(4) { transition-delay: 0.3s; }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 1.2rem 2rem; }
-    .nav-links { gap: 1.5rem; }
-
+    .nav-links { gap: 1.2rem; }
     #hero { grid-template-columns: 1fr; }
     .hero-left { padding: 4rem 2rem 2rem; }
     .hero-left::after { display: none; }
     .hero-right { padding: 2rem; }
-
     section { padding: 4rem 2rem; }
-
     #cv { grid-template-columns: 1fr; }
     .cv-left, .cv-right { padding: 4rem 2rem; }
-
     #contact { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 2rem; }
-
     .pub-item { grid-template-columns: 60px 1fr; }
     .pub-link { display: none; }
-
     footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem 2rem; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-brand">Subash Neupane</div>
   <ul class="nav-links">
@@ -815,18 +704,17 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <div class="eyebrow">Assistant Professor</div>
+    <div class="eyebrow">Assistant Professor · Tenure-Track</div>
     <h1>Subash<br><em>Neupane</em></h1>
     <div class="title-bar">
-      <span>Dept. of Computer Science</span>
+      <span>CS &amp; Data Science</span>
       <span class="sep">·</span>
-      <span>Meharry Medical Collge</span>
+      <span>Meharry Medical College</span>
     </div>
     <p class="hero-bio">
-    I am an Assistant Professor of Computer and Data Science at Meharry Medical College, where I work at the intersection of AI, healthcare, and cybersecurity. My research focuses on generative AI, neuro-symbolic AI, retrieval-augmented generation (RAG), and trustworthy AI systems for real-world clinical and secure computing applications.
+      I am an Assistant Professor (Tenure-Track) in the Department of Computer Science and Data Science at Meharry Medical College, Nashville. My research lies at the intersection of Generative AI, Natural Language Processing, and Healthcare — building intelligent systems that improve clinical decision support, patient communication, and cybersecurity.
     </p>
     <div class="hero-cta">
       <a href="#publications" class="btn-primary">View Publications →</a>
@@ -836,29 +724,38 @@
 
   <div class="hero-right">
     <div class="photo-frame">
+      <!--
+        TO ADD YOUR PHOTO:
+        1. Upload your photo as "photo.jpg" to your GitHub repo
+        2. Delete the <div class="photo-placeholder">...</div> block below
+        3. Replace it with: <img src="photo.jpg" style="width:100%;height:100%;object-fit:cover;position:relative;z-index:1;">
+      -->
       <div class="photo-placeholder">
-        <img src="photo.jpg" style="width:100%;height:100%;object-fit:cover;position:relative;z-index:1;">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="22" r="12" stroke="#6b6458" stroke-width="1.5"/>
+          <path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="#6b6458" stroke-width="1.5"/>
+        </svg>
+        <p>Upload photo.jpg<br>to your GitHub repo</p>
       </div>
     </div>
 
     <div class="hero-stats">
       <div class="stat">
-        <span class="stat-num">12</span>
+        <span class="stat-num">36</span>
         <span class="stat-label">Publications</span>
       </div>
       <div class="stat">
-        <span class="stat-num">3</span>
-        <span class="stat-label">Grants</span>
+        <span class="stat-num">677</span>
+        <span class="stat-label">Citations</span>
       </div>
       <div class="stat">
-        <span class="stat-num">8</span>
-        <span class="stat-label">Students</span>
+        <span class="stat-num">h2</span>
+        <span class="stat-label">h-Index</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- RESEARCH -->
 <section id="research">
   <div class="section-header">
     <span class="section-num">01</span>
@@ -867,29 +764,28 @@
   </div>
   <div class="research-grid">
     <div class="research-card fade-up">
-      <div class="card-icon">🔬</div>
-      <h3>Research Area One</h3>
-      <p>A concise description of this research thrust, its motivations, and why it matters. Replace with your own research area and a 2–3 sentence summary.</p>
+      <div class="card-icon">🏥</div>
+      <h3>Healthcare AI</h3>
+      <p>Clinical workflows generate vast amounts of unstructured data — notes, conversations, and records — that go largely underutilized. I develop context-aware AI frameworks that transform this data into actionable insights, enabling automated clinical summarization, personalized patient responses, and intelligent decision support at the point of care.</p>
     </div>
     <div class="research-card fade-up">
-      <div class="card-icon">🧠</div>
-      <h3>Research Area Two</h3>
-      <p>A concise description of this research thrust, its motivations, and why it matters. Replace with your own research area and a 2–3 sentence summary.</p>
+      <div class="card-icon">🤖</div>
+      <h3>Generative AI &amp; LLMs</h3>
+      <p>Large language models hold transformative potential for medicine, but deploying them safely in high-stakes environments remains an open challenge. My work investigates HIPAA-compliant agentic AI systems, uncertainty quantification in LLM outputs, and the design of reliable AI pipelines that clinicians and patients can actually trust.</p>
     </div>
     <div class="research-card fade-up">
-      <div class="card-icon">📡</div>
-      <h3>Research Area Three</h3>
-      <p>A concise description of this research thrust, its motivations, and why it matters. Replace with your own research area and a 2–3 sentence summary.</p>
+      <div class="card-icon">🔐</div>
+      <h3>Cybersecurity</h3>
+      <p>As AI systems become embedded in critical infrastructure, their security vulnerabilities become societal risks. I research explainable intrusion detection systems (X-IDS) and GenAI-enabled adaptive cyber defense strategies — building systems that not only detect threats but explain their reasoning in human-understandable terms.</p>
     </div>
     <div class="research-card fade-up">
-      <div class="card-icon">🌐</div>
-      <h3>Research Area Four</h3>
-      <p>A concise description of this research thrust, its motivations, and why it matters. Replace with your own research area and a 2–3 sentence summary.</p>
+      <div class="card-icon">📝</div>
+      <h3>Natural Language Processing</h3>
+      <p>Language is the primary medium of healthcare — yet most clinical text remains locked in formats machines cannot understand. I build NLP pipelines for clinical text mining, patient-centric knowledge graphs, and conversational agents that connect patients and clinicians to the right information at the right time.</p>
     </div>
   </div>
 </section>
 
-<!-- PUBLICATIONS -->
 <section id="publications">
   <div class="section-header">
     <span class="section-num">02</span>
@@ -901,70 +797,128 @@
     <button class="filter-btn active">All</button>
     <button class="filter-btn">Journal</button>
     <button class="filter-btn">Conference</button>
-    <button class="filter-btn">Workshop</button>
+    <button class="filter-btn">Preprint</button>
   </div>
 
   <div class="pub-list">
+
+    <!-- 1. Top-tier conference — AAAI 2025 -->
     <div class="pub-item fade-up">
-      <div class="pub-year">2024</div>
+      <div class="pub-year">2025</div>
       <div class="pub-content">
-        <h4>Title of Your Most Recent Paper: A Comprehensive Study</h4>
-        <div class="pub-venue">Proceedings of [Top Conference / Journal Name] · 2024</div>
-        <div class="pub-authors">S. Neupane, Co-Author A., Co-Author B.</div>
+        <h4>Intelligent Clinical Assistant for Personalized Responses and Clinical Summaries</h4>
+        <div class="pub-venue">AAAI Conference on Artificial Intelligence · 2025</div>
+        <div class="pub-authors">S. Neupane</div>
         <div class="pub-tags">
-          <span class="tag highlight">Best Paper</span>
-          <span class="tag">Machine Learning</span>
-          <span class="tag">Systems</span>
+          <span class="tag highlight">AAAI 2025</span>
+          <span class="tag">Healthcare AI</span>
+          <span class="tag">LLMs</span>
         </div>
       </div>
-      <a href="#" class="pub-link">PDF →</a>
+      <a href="https://scholar.google.com/citations?user=EbML-C0AAAAJ&hl=en" target="_blank" class="pub-link">Scholar →</a>
     </div>
 
+    <!-- 2. Timely & relevant — HIPAA agentic AI -->
     <div class="pub-item fade-up">
-      <div class="pub-year">2023</div>
+      <div class="pub-year">2025</div>
       <div class="pub-content">
-        <h4>Second Publication Title Goes Here: Subtitle with More Detail</h4>
-        <div class="pub-venue">Journal of [Field Name] · Vol. 12, No. 3 · 2023</div>
-        <div class="pub-authors">S. Neupane, Co-Author C., Co-Author D.</div>
+        <h4>Towards a HIPAA Compliant Agentic AI System in Healthcare</h4>
+        <div class="pub-venue">arXiv Preprint · abs/2504.17669 · 2025</div>
+        <div class="pub-authors">S. Neupane, S. Mitra, S. Mittal, S. Rahimi</div>
         <div class="pub-tags">
-          <span class="tag">Deep Learning</span>
-          <span class="tag">Networks</span>
-        </div>
-      </div>
-      <a href="#" class="pub-link">PDF →</a>
-    </div>
-
-    <div class="pub-item fade-up">
-      <div class="pub-year">2023</div>
-      <div class="pub-content">
-        <h4>Third Paper: Workshop or Short Paper Title Example</h4>
-        <div class="pub-venue">Workshop on [Topic] @ [Conference] · 2023</div>
-        <div class="pub-authors">S. Neupane, Co-Author E.</div>
-        <div class="pub-tags">
-          <span class="tag">Workshop</span>
-          <span class="tag">Optimization</span>
-        </div>
-      </div>
-      <a href="#" class="pub-link">PDF →</a>
-    </div>
-
-    <div class="pub-item fade-up">
-      <div class="pub-year">2022</div>
-      <div class="pub-content">
-        <h4>Fourth Publication: Another Interesting Paper Title Here</h4>
-        <div class="pub-venue">IEEE Transactions on [Area] · 2022</div>
-        <div class="pub-authors">Co-Author F., S. Neupane, Co-Author G.</div>
-        <div class="pub-tags">
-          <span class="tag">Security</span>
+          <span class="tag">Healthcare AI</span>
+          <span class="tag">AI Agents</span>
           <span class="tag">Privacy</span>
         </div>
       </div>
-      <a href="#" class="pub-link">PDF →</a>
+      <a href="https://arxiv.org/abs/2504.17669" target="_blank" class="pub-link">arXiv →</a>
     </div>
+
+    <!-- 3. Breadth — TwinExplainer IEEE CAI 2025 -->
+    <div class="pub-item fade-up">
+      <div class="pub-year">2025</div>
+      <div class="pub-content">
+        <h4>TwinExplainer: Explaining Predictions of an Automotive Digital Twin</h4>
+        <div class="pub-venue">IEEE Conference on Artificial Intelligence (CAI) · 2025</div>
+        <div class="pub-authors">S. Neupane, S. Mitra, I. A. Fernandez, S. Mittal, S. Rahimi</div>
+        <div class="pub-tags">
+          <span class="tag">Digital Twin</span>
+          <span class="tag">Explainability</span>
+          <span class="tag">IEEE</span>
+        </div>
+      </div>
+      <a href="https://scholar.google.com/citations?user=EbML-C0AAAAJ&hl=en" target="_blank" class="pub-link">Scholar →</a>
+    </div>
+
+    <!-- 4. High-impact journal — IEEE Access AI-Robotics -->
+    <div class="pub-item fade-up">
+      <div class="pub-year">2024</div>
+      <div class="pub-content">
+        <h4>Security Considerations in AI-Robotics: A Survey of Current Methods, Challenges, and Opportunities</h4>
+        <div class="pub-venue">IEEE Access · Vol. 12, pp. 22072–22097 · 2024</div>
+        <div class="pub-authors">S. Neupane, S. Mitra, I. A. Fernandez, S. Saha, S. Mittal, J. Chen, N. Pillai, S. Rahimi</div>
+        <div class="pub-tags">
+          <span class="tag highlight">IEEE Access</span>
+          <span class="tag">Cybersecurity</span>
+          <span class="tag">AI-Robotics</span>
+          <span class="tag">Survey</span>
+        </div>
+      </div>
+      <a href="https://scholar.google.com/citations?user=EbML-C0AAAAJ&hl=en" target="_blank" class="pub-link">Scholar →</a>
+    </div>
+
+    <!-- 5. Healthcare + AI — Patient-Centric Knowledge Graphs -->
+    <div class="pub-item fade-up">
+      <div class="pub-year">2024</div>
+      <div class="pub-content">
+        <h4>Patient-Centric Knowledge Graphs: A Survey of Current Methods, Challenges, and Applications</h4>
+        <div class="pub-venue">Frontiers in Artificial Intelligence · Vol. 7 · 2024</div>
+        <div class="pub-authors">H. S. Al Khatib, S. Neupane, H. K. Manchukonda, N. A. Golilarz, S. Mittal, A. Amirlatifi, S. Rahimi</div>
+        <div class="pub-tags">
+          <span class="tag">Knowledge Graphs</span>
+          <span class="tag">Healthcare</span>
+          <span class="tag">Survey</span>
+        </div>
+      </div>
+      <a href="https://scholar.google.com/citations?user=EbML-C0AAAAJ&hl=en" target="_blank" class="pub-link">Scholar →</a>
+    </div>
+
+    <!-- 6. Bridges both areas — GenAI & Cyber Defense -->
+    <div class="pub-item fade-up">
+      <div class="pub-year">2023</div>
+      <div class="pub-content">
+        <h4>Impacts and Risk of Generative AI Technology on Cyber Defense</h4>
+        <div class="pub-venue">arXiv Preprint · abs/2306.13033 · 2023</div>
+        <div class="pub-authors">S. Neupane, I. A. Fernandez, S. Mittal, S. Rahimi</div>
+        <div class="pub-tags">
+          <span class="tag">GenAI</span>
+          <span class="tag">Cybersecurity</span>
+          <span class="tag">Cyber Defense</span>
+        </div>
+      </div>
+      <a href="https://arxiv.org/abs/2306.13033" target="_blank" class="pub-link">arXiv →</a>
+    </div>
+
+    <!-- 7. Most cited foundational work — X-IDS IEEE Access -->
+    <div class="pub-item fade-up">
+      <div class="pub-year">2022</div>
+      <div class="pub-content">
+        <h4>Explainable Intrusion Detection Systems (X-IDS): A Survey of Current Methods, Challenges, and Opportunities</h4>
+        <div class="pub-venue">IEEE Access · 2022</div>
+        <div class="pub-authors">S. Neupane, J. Ables, W. Anderson, S. Mittal, S. Rahimi, I. Banicescu, M. Seale</div>
+        <div class="pub-tags">
+          <span class="tag highlight">IEEE Access</span>
+          <span class="tag">Explainable AI</span>
+          <span class="tag">Intrusion Detection</span>
+          <span class="tag">Survey</span>
+        </div>
+      </div>
+      <a href="https://scholar.google.com/citations?user=EbML-C0AAAAJ&hl=en" target="_blank" class="pub-link">Scholar →</a>
+    </div>
+
   </div>
 </section>
 
-<!-- TEACHING -->
 <section id="teaching">
   <div class="section-header">
     <span class="section-num">03</span>
@@ -973,36 +927,38 @@
   </div>
   <div class="teaching-grid">
     <div class="course-card fade-up">
-      <div class="course-code">CS 4XX · Fall 2024</div>
-      <h3>Course Name One</h3>
-      <p>Brief description of the course, its goals, and who it is designed for. One or two sentences.</p>
-      <div class="course-meta">
-        <span>Undergraduate</span>
-        <span>3 Credits</span>
-      </div>
-    </div>
-    <div class="course-card fade-up">
-      <div class="course-code">CS 5XX · Spring 2024</div>
-      <h3>Course Name Two</h3>
-      <p>Brief description of the course, its goals, and who it is designed for. One or two sentences.</p>
+      <div class="course-code">Meharry Medical College</div>
+      <h3>Artificial Intelligence in Healthcare</h3>
+      <p>An introduction to AI and machine learning techniques applied to clinical problems, including NLP for clinical notes, predictive modeling, and ethical considerations in healthcare AI.</p>
       <div class="course-meta">
         <span>Graduate</span>
         <span>3 Credits</span>
       </div>
     </div>
     <div class="course-card fade-up">
-      <div class="course-code">CS 3XX · Fall 2023</div>
-      <h3>Course Name Three</h3>
-      <p>Brief description of the course, its goals, and who it is designed for. One or two sentences.</p>
+      <div class="course-code">Meharry Medical College</div>
+      <h3>Cybersecurity Fundamentals</h3>
+      <p>Covers foundational principles of cybersecurity including intrusion detection, adversarial ML, network security, and emerging GenAI-enabled defense strategies.</p>
       <div class="course-meta">
-        <span>Undergraduate</span>
+        <span>Undergraduate / Graduate</span>
+        <span>3 Credits</span>
+      </div>
+    </div>
+    <div class="course-card fade-up">
+      <div class="course-code">Meharry Medical College</div>
+      <h3>Natural Language Processing</h3>
+      <p>Theory and practice of NLP including text classification, named entity recognition, transformer models, and applications in information retrieval and clinical text mining.</p>
+      <div class="course-meta">
+        <span>Graduate</span>
         <span>3 Credits</span>
       </div>
     </div>
   </div>
+  <p style="margin-top:2rem; font-family:'DM Mono',monospace; font-size:0.68rem; color:var(--muted); letter-spacing:0.08em;">
+    * Please update course names, codes, and terms to match your current teaching schedule.
+  </p>
 </section>
 
-<!-- CV / BACKGROUND -->
 <div id="cv">
   <div class="cv-left">
     <div class="section-header">
@@ -1012,31 +968,31 @@
     </div>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="tl-year">2022–<br>Present</div>
+        <div class="tl-year">2025–<br>Present</div>
         <div class="tl-content">
-          <h4>Assistant Professor</h4>
-          <p>Department of Computer Science<br>Your University</p>
+          <h4>Assistant Professor (Tenure-Track)</h4>
+          <p>Dept. of Computer Science &amp; Data Science<br>Meharry Medical College, Nashville, TN</p>
         </div>
       </div>
       <div class="timeline-item">
-        <div class="tl-year">2020–2022</div>
-        <div class="tl-content">
-          <h4>Postdoctoral Researcher</h4>
-          <p>Previous Institution<br>Advisor: Prof. Name</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-year">2015–2020</div>
+        <div class="tl-year">2021–2025</div>
         <div class="tl-content">
           <h4>Ph.D., Computer Science</h4>
-          <p>PhD University<br>Thesis: "Title of Your Dissertation"</p>
+          <p>Mississippi State University<br>Advisor: Prof. Shahram Rahimi<br>Thesis: "Augmenting Healthcare Communication: Context-Aware AI Frameworks for Clinical Decision Support and Automated Summarization"</p>
         </div>
       </div>
       <div class="timeline-item">
-        <div class="tl-year">2011–2015</div>
+        <div class="tl-year">Prior</div>
         <div class="tl-content">
-          <h4>B.Sc., Computer Engineering</h4>
-          <p>Undergraduate University</p>
+          <h4>M.Sc., Information Systems &amp; Security</h4>
+          <p>Graduate studies in information security and systems</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">Prior</div>
+        <div class="tl-content">
+          <h4>M.Sc., Information Technology</h4>
+          <p>Graduate studies in information technology</p>
         </div>
       </div>
     </div>
@@ -1044,33 +1000,36 @@
 
   <div class="cv-right">
     <div>
-      <h3>Research Skills</h3>
+      <h3>Research Expertise</h3>
       <div class="skills-list">
-        <span class="skill-tag">Machine Learning</span>
-        <span class="skill-tag">Deep Learning</span>
+        <span class="skill-tag">Generative AI</span>
+        <span class="skill-tag">Large Language Models</span>
+        <span class="skill-tag">NLP</span>
+        <span class="skill-tag">Healthcare AI</span>
+        <span class="skill-tag">Cybersecurity</span>
+        <span class="skill-tag">Explainable AI</span>
+        <span class="skill-tag">Information Retrieval</span>
+        <span class="skill-tag">Knowledge Graphs</span>
+        <span class="skill-tag">Digital Twins</span>
         <span class="skill-tag">Python</span>
         <span class="skill-tag">PyTorch</span>
-        <span class="skill-tag">Distributed Systems</span>
-        <span class="skill-tag">Data Analysis</span>
-        <span class="skill-tag">R</span>
-        <span class="skill-tag">LaTeX</span>
-        <span class="skill-tag">Grant Writing</span>
       </div>
     </div>
     <div>
-      <h3>Service & Affiliations</h3>
+      <h3>Service &amp; Community</h3>
       <div class="skills-list">
-        <span class="skill-tag">PC Member — NeurIPS</span>
-        <span class="skill-tag">Reviewer — ICML</span>
-        <span class="skill-tag">IEEE Member</span>
+        <span class="skill-tag">AAAI Contributor</span>
+        <span class="skill-tag">IEEE Access Author</span>
+        <span class="skill-tag">Frontiers AI Author</span>
+        <span class="skill-tag">OpenReview Reviewer</span>
         <span class="skill-tag">ACM Member</span>
+        <span class="skill-tag">IEEE Member</span>
       </div>
     </div>
     <a href="cv.pdf" class="cv-download">↓ Download Full CV</a>
   </div>
 </div>
 
-<!-- CONTACT -->
 <section id="contact">
   <div>
     <div class="section-header">
@@ -1078,23 +1037,27 @@
       <h2>Contact</h2>
       <div class="section-rule"></div>
     </div>
-    <p class="contact-intro">Open to collaborations, speaking invitations, and prospective graduate students.</p>
+    <p class="contact-intro">Open to research collaborations, speaking invitations, and prospective graduate students interested in AI, Healthcare, and Cybersecurity.</p>
     <div class="contact-items">
       <div class="contact-item">
         <span class="contact-icon">Email</span>
-        <span class="contact-val"><a href="mailto:s.neupane@university.edu">s.neupane@university.edu</a></span>
+        <span class="contact-val"><a href="/cdn-cgi/l/email-protection#b1c2dfd4c4c1d0dfd4f1dcdcd29fd4d5c4"><span class="__cf_email__" data-cfemail="04776a617174656a61446969672a616071">[email&#160;protected]</span></a></span>
       </div>
       <div class="contact-item">
         <span class="contact-icon">Office</span>
-        <span class="contact-val">Room 000, Building Name<br>University Address</span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-icon">Hours</span>
-        <span class="contact-val">Tuesdays & Thursdays<br>2:00 – 4:00 PM, or by appointment</span>
+        <span class="contact-val">Meharry Medical College<br>Nashville, Tennessee</span>
       </div>
       <div class="contact-item">
         <span class="contact-icon">Scholar</span>
-        <span class="contact-val"><a href="https://scholar.google.com" target="_blank">Google Scholar Profile →</a></span>
+        <span class="contact-val"><a href="https://scholar.google.com/citations?user=EbML-C0AAAAJ&hl=en" target="_blank">Google Scholar Profile →</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">DBLP</span>
+        <span class="contact-val"><a href="https://dblp.org/pid/324/4781.html" target="_blank">DBLP Publication List →</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">ResGate</span>
+        <span class="contact-val"><a href="https://www.researchgate.net/profile/Subash-Neupane-5" target="_blank">ResearchGate Profile →</a></span>
       </div>
     </div>
   </div>
@@ -1111,7 +1074,7 @@
       </div>
       <div class="form-group">
         <label>Subject</label>
-        <input type="text" placeholder="Research collaboration inquiry">
+        <input type="text" placeholder="Research collaboration / PhD inquiry">
       </div>
       <div class="form-group">
         <label>Message</label>
@@ -1122,25 +1085,21 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <span>© 2024 Subash Neupane. All rights reserved.</span>
+  <span>© 2025 Subash Neupane · Meharry Medical College, Nashville</span>
   <span>
-    <a href="https://scholar.google.com" target="_blank">Scholar</a> ·
-    <a href="https://linkedin.com" target="_blank">LinkedIn</a> ·
-    <a href="https://github.com" target="_blank">GitHub</a>
+    <a href="https://scholar.google.com/citations?user=EbML-C0AAAAJ&hl=en" target="_blank">Scholar</a> ·
+    <a href="https://dblp.org/pid/324/4781.html" target="_blank">DBLP</a> ·
+    <a href="https://www.researchgate.net/profile/Subash-Neupane-5" target="_blank">ResearchGate</a>
   </span>
 </footer>
 
-<script>
-  // Scroll fade-in
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
-
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // Publication filter (UI only - extend with data attributes for real filtering)
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -1148,15 +1107,7 @@
     });
   });
 
-  // Animate hero on load
   window.addEventListener('load', () => {
     document.querySelectorAll('.hero-left > *').forEach((el, i) => {
       el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = `opacity 0.7s ease ${i * 0.12}s, transform 0.7s ease ${i * 0.12}s`;
-      setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 50);
-    });
-  });
-</script>
-</body>
-</html>
+      el.style.transform = 'translateY(20
