@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subash Neupane — Assistant Professor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f5f2ec;
+    --cream: #ede9df;
+    --gold: #b8860b;
+    --gold-light: #d4a843;
+    --muted: #6b6458;
+    --rule: #d0c9bc;
+    --accent: #1a3a5c;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 4rem;
+    background: rgba(245, 242, 236, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .nav-brand {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0; right: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.25s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 3rem 6rem 4rem;
+    position: relative;
+  }
+
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 15%; bottom: 15%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--rule) 30%, var(--rule) 70%, transparent);
+  }
+
+  .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.2rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .title-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .title-bar span {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .title-bar .sep { color: var(--rule); }
+
+  .hero-bio {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #3d3830;
+    max-width: 44ch;
+    margin-bottom: 3rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover { background: #0f2540; transform: translateY(-1px); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+  }
+
+  .btn-outline:hover { background: var(--ink); color: var(--paper); transform: translateY(-1px); }
+
+  /* ── HERO RIGHT ── */
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 4rem 6rem 3rem;
+    gap: 2rem;
+  }
+
+  .photo-frame {
+    position: relative;
+    width: 280px;
+    height: 350px;
+  }
+
+  .photo-frame::before {
+    content: '';
+    position: absolute;
+    top: 16px; left: 16px;
+    right: -16px; bottom: -16px;
+    border: 1px solid var(--gold);
+    z-index: 0;
+  }
+
+  .photo-placeholder {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--cream) 0%, #ddd6c8 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border: 1px solid var(--rule);
+  }
+
+  .photo-placeholder svg {
+    width: 64px;
+    height: 64px;
+    opacity: 0.25;
+  }
+
+  .photo-placeholder p {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  /* replace .photo-placeholder with actual <img> when ready */
+  .photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    width: 100%;
+    max-width: 360px;
+    border: 1px solid var(--rule);
+  }
+
+  .stat {
+    padding: 1.2rem;
+    text-align: center;
+    border-right: 1px solid var(--rule);
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--accent);
+    display: block;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.56rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.3rem;
+    display: block;
+  }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 6rem 4rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+    align-self: center;
+  }
+
+  /* ── RESEARCH ── */
+  #research { background: var(--cream); }
+
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+  }
+
+  .research-card {
+    background: var(--paper);
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: transform 0.25s;
+    cursor: default;
+  }
+
+  .research-card:hover { transform: translateY(-4px); }
+
+  .research-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .research-card:hover::before { transform: scaleX(1); }
+
+  .card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .research-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .research-card p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  /* ── PUBLICATIONS ── */
+  #publications {}
+
+  .pub-filters {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--rule);
+    background: transparent;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+
+  .pub-list { display: flex; flex-direction: column; gap: 0; }
+
+  .pub-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+    transition: background 0.2s;
+  }
+
+  .pub-item:first-child { border-top: 1px solid var(--rule); }
+
+  .pub-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--gold);
+    padding-top: 0.15rem;
+  }
+
+  .pub-content h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.35;
+    margin-bottom: 0.4rem;
+  }
+
+  .pub-venue {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .pub-authors {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .pub-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.6rem; }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--rule);
+    color: var(--muted);
+  }
+
+  .tag.highlight { border-color: var(--gold); color: var(--gold); }
+
+  .pub-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+    padding-top: 0.15rem;
+    transition: color 0.2s;
+  }
+
+  .pub-link:hover { color: var(--gold); }
+
+  /* ── TEACHING ── */
+  #teaching { background: var(--cream); }
+
+  .teaching-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+
+  .course-card {
+    border: 1px solid var(--rule);
+    padding: 2rem;
+    position: relative;
+    background: var(--paper);
+    transition: box-shadow 0.25s;
+  }
+
+  .course-card:hover { box-shadow: 6px 6px 0 var(--rule); }
+
+  .course-code {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    margin-bottom: 0.7rem;
+  }
+
+  .course-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .course-card p {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .course-meta {
+    display: flex;
+    gap: 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+
+  /* ── CV SECTION ── */
+  #cv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+  }
+
+  .cv-left {
+    padding: 6rem 4rem;
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .cv-left .section-header { margin-bottom: 3rem; }
+  .cv-left h2 { color: rgba(255,255,255,0.9); }
+  .cv-left .section-num { color: rgba(184, 134, 11, 0.8); }
+  .cv-left .section-rule { background: rgba(255,255,255,0.15); }
+
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1.5rem;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .timeline-item:last-child { border-bottom: none; }
+
+  .tl-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(184, 134, 11, 0.9);
+    padding-top: 0.15rem;
+    line-height: 1.5;
+  }
+
+  .tl-content h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 0.2rem;
+  }
+
+  .tl-content p {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+  }
+
+  .cv-right {
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .cv-right h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+  }
+
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill-tag {
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--rule);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .cv-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2rem;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: fit-content;
+    transition: background 0.2s;
+  }
+
+  .cv-download:hover { background: var(--accent); }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 6rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+
+  #contact h2 { color: rgba(245,242,236,0.9); }
+  #contact .section-num { color: rgba(184, 134, 11, 0.8); }
+  #contact .section-rule { background: rgba(255,255,255,0.1); }
+
+  .contact-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgba(245,242,236,0.7);
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-items { display: flex; flex-direction: column; gap: 1.2rem; }
+
+  .contact-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding-top: 0.15rem;
+    min-width: 60px;
+  }
+
+  .contact-val {
+    font-size: 0.9rem;
+    color: rgba(245,242,236,0.6);
+    line-height: 1.5;
+  }
+
+  .contact-val a { color: rgba(245,242,236,0.6); text-decoration: none; transition: color 0.2s; }
+  .contact-val a:hover { color: var(--gold); }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .form-group label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--paper);
+    padding: 0.9rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: vertical;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(245,242,236,0.2); }
+
+  .btn-send {
+    padding: 0.9rem 2rem;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-send:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0a0906;
+    color: rgba(245,242,236,0.3);
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+  }
+
+  footer a { color: rgba(245,242,236,0.3); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--gold); }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  .fade-up:nth-child(2) { transition-delay: 0.1s; }
+  .fade-up:nth-child(3) { transition-delay: 0.2s; }
+  .fade-up:nth-child(4) { transition-delay: 0.3s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { gap: 1.5rem; }
+
+    #hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 4rem 2rem 2rem; }
+    .hero-left::after { display: none; }
+    .hero-right { padding: 2rem; }
+
+    section { padding: 4rem 2rem; }
+
+    #cv { grid-template-columns: 1fr; }
+    .cv-left, .cv-right { padding: 4rem 2rem; }
+
+    #contact { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 2rem; }
+
+    .pub-item { grid-template-columns: 60px 1fr; }
+    .pub-link { display: none; }
+
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Subash Neupane</div>
+  <ul class="nav-links">
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Assistant Professor</div>
+    <h1>Subash<br><em>Neupane</em></h1>
+    <div class="title-bar">
+      <span>Dept. of Computer Science</span>
+      <span class="sep">·</span>
+      <span>University Name</span>
+    </div>
+    <p class="hero-bio">
+      I am an assistant professor researching [your research area]. My work sits at the intersection of [field A] and [field B], with a focus on [key theme]. I am committed to rigorous scholarship and mentoring the next generation of researchers.
+    </p>
+    <div class="hero-cta">
+      <a href="#publications" class="btn-primary">View Publications →</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="photo-frame">
+      <div class="photo-placeholder">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="22" r="12" stroke="#6b6458" stroke-width="1.5"/>
+          <path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="#6b6458" stroke-width="1.5"/>
+        </svg>
+        <p>Replace with your photo<br>280 × 350 px</p>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">12</span>
+        <span class="stat-label">Publications</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Grants</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">8</span>
+        <span class="stat-label">Students</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2>Research Interests</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="research-grid">
+    <div class="research-card fade-up">
+      <div class="card-icon">🔬</div>
+      <h3>Research Area One</h3>
+      <p>A concise description of this research thrust, its motivations, and why it matters. Replace with your own research area and a 2–3 sentence summary.</p>
+    </div>
+    <div class="research-card fade-up">
+      <div class="card-icon">🧠</div>
+      <h3>Research Area Two</h3>
+      <p>A concise description of this research thrust, its motivations, and why it matters. Replace with your own research area and a 2–3 sentence summary.</p>
+    </div>
+    <div class="research-card fade-up">
+      <div class="card-icon">📡</div>
+      <h3>Research Area Three</h3>
+      <p>A concise description of this research thrust, its motivations, and why it matters. Replace with your own research area and a 2–3 sentence summary.</p>
+    </div>
+    <div class="research-card fade-up">
+      <div class="card-icon">🌐</div>
+      <h3>Research Area Four</h3>
+      <p>A concise description of this research thrust, its motivations, and why it matters. Replace with your own research area and a 2–3 sentence summary.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2>Selected Publications</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="pub-filters">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Journal</button>
+    <button class="filter-btn">Conference</button>
+    <button class="filter-btn">Workshop</button>
+  </div>
+
+  <div class="pub-list">
+    <div class="pub-item fade-up">
+      <div class="pub-year">2024</div>
+      <div class="pub-content">
+        <h4>Title of Your Most Recent Paper: A Comprehensive Study</h4>
+        <div class="pub-venue">Proceedings of [Top Conference / Journal Name] · 2024</div>
+        <div class="pub-authors">S. Neupane, Co-Author A., Co-Author B.</div>
+        <div class="pub-tags">
+          <span class="tag highlight">Best Paper</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Systems</span>
+        </div>
+      </div>
+      <a href="#" class="pub-link">PDF →</a>
+    </div>
+
+    <div class="pub-item fade-up">
+      <div class="pub-year">2023</div>
+      <div class="pub-content">
+        <h4>Second Publication Title Goes Here: Subtitle with More Detail</h4>
+        <div class="pub-venue">Journal of [Field Name] · Vol. 12, No. 3 · 2023</div>
+        <div class="pub-authors">S. Neupane, Co-Author C., Co-Author D.</div>
+        <div class="pub-tags">
+          <span class="tag">Deep Learning</span>
+          <span class="tag">Networks</span>
+        </div>
+      </div>
+      <a href="#" class="pub-link">PDF →</a>
+    </div>
+
+    <div class="pub-item fade-up">
+      <div class="pub-year">2023</div>
+      <div class="pub-content">
+        <h4>Third Paper: Workshop or Short Paper Title Example</h4>
+        <div class="pub-venue">Workshop on [Topic] @ [Conference] · 2023</div>
+        <div class="pub-authors">S. Neupane, Co-Author E.</div>
+        <div class="pub-tags">
+          <span class="tag">Workshop</span>
+          <span class="tag">Optimization</span>
+        </div>
+      </div>
+      <a href="#" class="pub-link">PDF →</a>
+    </div>
+
+    <div class="pub-item fade-up">
+      <div class="pub-year">2022</div>
+      <div class="pub-content">
+        <h4>Fourth Publication: Another Interesting Paper Title Here</h4>
+        <div class="pub-venue">IEEE Transactions on [Area] · 2022</div>
+        <div class="pub-authors">Co-Author F., S. Neupane, Co-Author G.</div>
+        <div class="pub-tags">
+          <span class="tag">Security</span>
+          <span class="tag">Privacy</span>
+        </div>
+      </div>
+      <a href="#" class="pub-link">PDF →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHING -->
+<section id="teaching">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2>Teaching</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="teaching-grid">
+    <div class="course-card fade-up">
+      <div class="course-code">CS 4XX · Fall 2024</div>
+      <h3>Course Name One</h3>
+      <p>Brief description of the course, its goals, and who it is designed for. One or two sentences.</p>
+      <div class="course-meta">
+        <span>Undergraduate</span>
+        <span>3 Credits</span>
+      </div>
+    </div>
+    <div class="course-card fade-up">
+      <div class="course-code">CS 5XX · Spring 2024</div>
+      <h3>Course Name Two</h3>
+      <p>Brief description of the course, its goals, and who it is designed for. One or two sentences.</p>
+      <div class="course-meta">
+        <span>Graduate</span>
+        <span>3 Credits</span>
+      </div>
+    </div>
+    <div class="course-card fade-up">
+      <div class="course-code">CS 3XX · Fall 2023</div>
+      <h3>Course Name Three</h3>
+      <p>Brief description of the course, its goals, and who it is designed for. One or two sentences.</p>
+      <div class="course-meta">
+        <span>Undergraduate</span>
+        <span>3 Credits</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CV / BACKGROUND -->
+<div id="cv">
+  <div class="cv-left">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Background</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="tl-year">2022–<br>Present</div>
+        <div class="tl-content">
+          <h4>Assistant Professor</h4>
+          <p>Department of Computer Science<br>Your University</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">2020–2022</div>
+        <div class="tl-content">
+          <h4>Postdoctoral Researcher</h4>
+          <p>Previous Institution<br>Advisor: Prof. Name</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">2015–2020</div>
+        <div class="tl-content">
+          <h4>Ph.D., Computer Science</h4>
+          <p>PhD University<br>Thesis: "Title of Your Dissertation"</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">2011–2015</div>
+        <div class="tl-content">
+          <h4>B.Sc., Computer Engineering</h4>
+          <p>Undergraduate University</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cv-right">
+    <div>
+      <h3>Research Skills</h3>
+      <div class="skills-list">
+        <span class="skill-tag">Machine Learning</span>
+        <span class="skill-tag">Deep Learning</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">PyTorch</span>
+        <span class="skill-tag">Distributed Systems</span>
+        <span class="skill-tag">Data Analysis</span>
+        <span class="skill-tag">R</span>
+        <span class="skill-tag">LaTeX</span>
+        <span class="skill-tag">Grant Writing</span>
+      </div>
+    </div>
+    <div>
+      <h3>Service & Affiliations</h3>
+      <div class="skills-list">
+        <span class="skill-tag">PC Member — NeurIPS</span>
+        <span class="skill-tag">Reviewer — ICML</span>
+        <span class="skill-tag">IEEE Member</span>
+        <span class="skill-tag">ACM Member</span>
+      </div>
+    </div>
+    <a href="cv.pdf" class="cv-download">↓ Download Full CV</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div>
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2>Contact</h2>
+      <div class="section-rule"></div>
+    </div>
+    <p class="contact-intro">Open to collaborations, speaking invitations, and prospective graduate students.</p>
+    <div class="contact-items">
+      <div class="contact-item">
+        <span class="contact-icon">Email</span>
+        <span class="contact-val"><a href="mailto:s.neupane@university.edu">s.neupane@university.edu</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">Office</span>
+        <span class="contact-val">Room 000, Building Name<br>University Address</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">Hours</span>
+        <span class="contact-val">Tuesdays & Thursdays<br>2:00 – 4:00 PM, or by appointment</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">Scholar</span>
+        <span class="contact-val"><a href="https://scholar.google.com" target="_blank">Google Scholar Profile →</a></span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="contact-form">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="Jane Smith">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="jane@university.edu">
+      </div>
+      <div class="form-group">
+        <label>Subject</label>
+        <input type="text" placeholder="Research collaboration inquiry">
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea rows="5" placeholder="Your message here…"></textarea>
+      </div>
+      <button class="btn-send">Send Message →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2024 Subash Neupane. All rights reserved.</span>
+  <span>
+    <a href="https://scholar.google.com" target="_blank">Scholar</a> ·
+    <a href="https://linkedin.com" target="_blank">LinkedIn</a> ·
+    <a href="https://github.com" target="_blank">GitHub</a>
+  </span>
+</footer>
+
+<script>
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Publication filter (UI only - extend with data attributes for real filtering)
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // Animate hero on load
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.hero-left > *').forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = `opacity 0.7s ease ${i * 0.12}s, transform 0.7s ease ${i * 0.12}s`;
+      setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 50);
+    });
+  });
+</script>
+</body>
+</html>
