@@ -1,45 +1,1202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Under Construction</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subash Neupane — Assistant Professor, Meharry Medical College</title>
+<meta name="description" content="Subash Neupane is an Assistant Professor (Tenure-Track) in the Department of Computer Science and Data Science at Meharry Medical College. Research in Generative AI, NLP, Healthcare AI, and Cybersecurity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f5f2ec;
+    --cream: #ede9df;
+    --gold: #b8860b;
+    --gold-light: #d4a843;
+    --muted: #6b6458;
+    --rule: #d0c9bc;
+    --accent: #1a3a5c;
+  }
 
-    .container {
-      background: white;
-      padding: 40px 60px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
 
-    h1 {
-      margin-bottom: 10px;
-      font-size: 2.5rem;
-      color: #d97706;
-    }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
 
-    p {
-      font-size: 1.1rem;
-      margin: 0;
-    }
-  </style>
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.6;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 4rem;
+    background: rgba(245, 242, 236, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .nav-brand {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0; right: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.25s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 3rem 6rem 4rem;
+    position: relative;
+  }
+
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 15%; bottom: 15%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--rule) 30%, var(--rule) 70%, transparent);
+  }
+
+  .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.2rem;
+  }
+
+  h1 em { font-style: italic; color: var(--accent); }
+
+  .title-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+  }
+
+  .title-bar span {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .title-bar .sep { color: var(--rule); }
+
+  .hero-bio {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #3d3830;
+    max-width: 44ch;
+    margin-bottom: 3rem;
+  }
+
+  .hero-cta { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover { background: #0f2540; transform: translateY(-1px); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.85rem 2rem;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+  }
+
+  .btn-outline:hover { background: var(--ink); color: var(--paper); transform: translateY(-1px); }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 4rem 6rem 3rem;
+    gap: 2rem;
+  }
+
+  .photo-frame {
+    position: relative;
+    width: 280px;
+    height: 350px;
+  }
+
+  .photo-frame::before {
+    content: '';
+    position: absolute;
+    top: 16px; left: 16px;
+    right: -16px; bottom: -16px;
+    border: 1px solid var(--gold);
+    z-index: 0;
+  }
+
+  .photo-frame img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    max-width: 360px;
+    border: 1px solid var(--rule);
+  }
+
+  .stat {
+    padding: 1.2rem;
+    text-align: center;
+    border-right: 1px solid var(--rule);
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--accent);
+    display: block;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.56rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.3rem;
+    display: block;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 4rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+
+  .section-rule { flex: 1; height: 1px; background: var(--rule); align-self: center; }
+
+  /* ── PUBLICATIONS ── */
+  #publications { background: var(--paper); }
+
+  .pub-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    align-items: flex-end;
+  }
+
+  .pub-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .pub-filter-group label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .pub-filter-group select {
+    padding: 0.5rem 2rem 0.5rem 0.8rem;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236b6458'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    min-width: 150px;
+    transition: border-color 0.2s;
+  }
+
+  .pub-filter-group select:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+
+  .pub-reset-btn {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--rule);
+    background: transparent;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    align-self: flex-end;
+  }
+
+  .pub-reset-btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  .pub-count {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-left: auto;
+    align-self: flex-end;
+    padding-bottom: 0.5rem;
+  }
+
+  .pub-list { display: flex; flex-direction: column; }
+
+  .pub-item {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+
+  .pub-item:first-child { border-top: 1px solid var(--rule); }
+
+  .pub-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--gold);
+    padding-top: 0.15rem;
+  }
+
+  .pub-content h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.35;
+    margin-bottom: 0.4rem;
+  }
+
+  .pub-venue {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+
+  .pub-description {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #3d3830;
+    margin-top: 0.8rem;
+  }
+
+  .pub-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.6rem; }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--rule);
+    color: var(--muted);
+  }
+
+  .tag.highlight { border-color: var(--gold); color: var(--gold); }
+
+  /* ── TEACHING ── */
+  #teaching { background: var(--cream); }
+
+  .semester-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .semester-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .semester-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--accent);
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .course-card {
+    border: 1px solid var(--rule);
+    padding: 2rem;
+    background: var(--paper);
+    transition: box-shadow 0.25s;
+  }
+
+  .course-card:hover { box-shadow: 6px 6px 0 var(--rule); }
+
+  .course-code {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    margin-bottom: 0.7rem;
+  }
+
+  .course-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .course-card p { font-size: 0.85rem; line-height: 1.65; color: var(--muted); margin-bottom: 1rem; }
+
+  .course-goal {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    background: rgba(26,58,92,0.06);
+    padding: 0.6rem 0.8rem;
+    border-left: 2px solid var(--accent);
+    line-height: 1.5;
+  }
+
+  .course-goal strong { color: var(--gold); }
+
+  .course-meta {
+    display: flex;
+    gap: 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-top: 0.8rem;
+  }
+
+  /* ── CV / BACKGROUND ── */
+  #cv { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; }
+
+  .cv-left { padding: 6rem 4rem; background: var(--accent); color: #fff; }
+  .cv-left .section-header { margin-bottom: 3rem; }
+  .cv-left h2 { color: rgba(255,255,255,0.9); }
+  .cv-left .section-num { color: rgba(184, 134, 11, 0.8); }
+  .cv-left .section-rule { background: rgba(255,255,255,0.15); }
+
+  .timeline { display: flex; flex-direction: column; }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1.5rem;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .timeline-item:last-child { border-bottom: none; }
+
+  .tl-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(184, 134, 11, 0.9);
+    padding-top: 0.15rem;
+    line-height: 1.5;
+  }
+
+  .tl-content h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 0.2rem;
+  }
+
+  .tl-content p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+  .cv-right {
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .cv-right h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+  }
+
+  .skills-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  .skill-tag {
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--rule);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .cv-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2rem;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: fit-content;
+    transition: background 0.2s;
+  }
+
+  .cv-download:hover { background: var(--accent); }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 6rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  #contact h2 { color: rgba(245,242,236,0.9); }
+  #contact .section-num { color: rgba(184, 134, 11, 0.8); }
+  #contact .section-rule { background: rgba(255,255,255,0.1); }
+
+  .contact-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgba(245,242,236,0.7);
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-items { display: flex; flex-direction: column; gap: 1.2rem; }
+  .contact-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+
+  .contact-icon {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding-top: 0.15rem;
+    min-width: 60px;
+  }
+
+  .contact-val { font-size: 0.9rem; color: rgba(245,242,236,0.6); line-height: 1.5; }
+  .contact-val a { color: rgba(245,242,236,0.6); text-decoration: none; transition: color 0.2s; }
+  .contact-val a:hover { color: var(--gold); }
+
+  .contact-right-area {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .map-container {
+    width: 100%;
+    height: 260px;
+    border: 1px solid rgba(255,255,255,0.12);
+    overflow: hidden;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(0.3) contrast(1.05);
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .form-group label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .form-group input, .form-group textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--paper);
+    padding: 0.9rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: vertical;
+  }
+
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(245,242,236,0.2); }
+
+  .btn-send {
+    padding: 0.9rem 2rem;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-send:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0a0906;
+    color: rgba(245,242,236,0.3);
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+  }
+
+  footer a { color: rgba(245,242,236,0.3); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--gold); }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  .fade-up:nth-child(2) { transition-delay: 0.1s; }
+  .fade-up:nth-child(3) { transition-delay: 0.2s; }
+  .fade-up:nth-child(4) { transition-delay: 0.3s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { gap: 1.2rem; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 4rem 2rem 2rem; }
+    .hero-left::after { display: none; }
+    .hero-right { padding: 2rem; }
+    section { padding: 4rem 2rem; }
+    .semester-columns { grid-template-columns: 1fr; }
+    #cv { grid-template-columns: 1fr; }
+    .cv-left, .cv-right { padding: 4rem 2rem; }
+    #contact { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 2rem; }
+    .pub-item { grid-template-columns: 50px 1fr; gap: 1rem; }
+    .pub-controls { flex-direction: column; align-items: stretch; }
+    .pub-filter-group select { min-width: unset; width: 100%; }
+    .pub-count { margin-left: 0; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem 2rem; }
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Website Under Construction</h1>
-    <p>Please check back soon.</p>
+
+<!-- ════════ NAV ════════ -->
+<nav>
+  <div class="nav-brand">Subash Neupane</div>
+  <ul class="nav-links">
+    <li><a href="#news">News</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Assistant Professor · Tenure-Track</div>
+    <h1>Subash<br><em>Neupane</em></h1>
+    <div class="title-bar">
+      <span>CS &amp; Data Science</span>
+      <span class="sep">·</span>
+      <span>Meharry Medical College</span>
+    </div>
+    <p class="hero-bio">
+      I am an Assistant Professor (Tenure-Track) in the Department of Computer Science and Data Science at Meharry Medical College, Nashville. My research lies at the intersection of Generative AI, Natural Language Processing, and Healthcare — building intelligent systems that improve clinical decision support, patient communication, and cybersecurity.
+    </p>
+    <div class="hero-cta">
+      <a href="#publications" class="btn-primary">View Publications →</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
   </div>
+
+  <div class="hero-right">
+    <div class="photo-frame">
+      <img src="photo.jpg" alt="Subash Neupane">
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">36</span>
+        <span class="stat-label">Publications</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">677</span>
+        <span class="stat-label">Citations</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">h2</span>
+        <span class="stat-label">h-Index</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ NEWS ════════ -->
+<section id="news" style="background: var(--cream);">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2>News</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:1.2rem;">
+    <div style="display:grid; grid-template-columns:90px 1fr; gap:1.5rem; padding:1.2rem 0; border-bottom:1px solid var(--rule);">
+      <span style="font-family:'DM Mono',monospace; font-size:0.65rem; color:var(--gold); letter-spacing:0.08em;">Mar 2025</span>
+      <p style="font-size:0.92rem; line-height:1.6; color:#3d3830;">Paper <strong>"MedInsight"</strong> accepted at <em>ACM Transactions on Computing for Healthcare</em>.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:90px 1fr; gap:1.5rem; padding:1.2rem 0; border-bottom:1px solid var(--rule);">
+      <span style="font-family:'DM Mono',monospace; font-size:0.65rem; color:var(--gold); letter-spacing:0.08em;">Feb 2025</span>
+      <p style="font-size:0.92rem; line-height:1.6; color:#3d3830;">Paper <strong>"Intelligent Clinical Assistant"</strong> accepted at <em>AAAI 2025</em>.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:90px 1fr; gap:1.5rem; padding:1.2rem 0; border-bottom:1px solid var(--rule);">
+      <span style="font-family:'DM Mono',monospace; font-size:0.65rem; color:var(--gold); letter-spacing:0.08em;">Jan 2025</span>
+      <p style="font-size:0.92rem; line-height:1.6; color:#3d3830;">Joined <strong>Meharry Medical College</strong> as Assistant Professor (Tenure-Track) in the Dept. of Computer &amp; Data Sciences.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:90px 1fr; gap:1.5rem; padding:1.2rem 0; border-bottom:1px solid var(--rule);">
+      <span style="font-family:'DM Mono',monospace; font-size:0.65rem; color:var(--gold); letter-spacing:0.08em;">2024</span>
+      <p style="font-size:0.92rem; line-height:1.6; color:#3d3830;">Paper <strong>"TwinExplainer"</strong> accepted at <em>IEEE Conference on Artificial Intelligence (CAI) 2025</em>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PUBLICATIONS ════════ -->
+<section id="publications">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2>Publications</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="pub-controls">
+    <div class="pub-filter-group">
+      <label>Year</label>
+      <select id="filter-year"><option value="">All Years</option></select>
+    </div>
+    <div class="pub-filter-group">
+      <label>Venue</label>
+      <select id="filter-venue"><option value="">All Venues</option></select>
+    </div>
+    <div class="pub-filter-group">
+      <label>Type</label>
+      <select id="filter-type"><option value="">All Types</option></select>
+    </div>
+    <div class="pub-filter-group">
+      <label>Domain</label>
+      <select id="filter-domain"><option value="">All Domains</option></select>
+    </div>
+    <button class="pub-reset-btn" id="reset-filters">Reset Filters</button>
+    <span class="pub-count" id="pub-count"></span>
+  </div>
+
+  <div class="pub-list" id="pub-list"></div>
+</section>
+
+<!-- ════════ TEACHING ════════ -->
+<section id="teaching">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2>Teaching</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="semester-columns">
+    <!-- SPRING -->
+    <div class="semester-col">
+      <div class="semester-heading">Spring</div>
+      <div class="course-card">
+        <div class="course-code">CS 5310 · Meharry Medical College</div>
+        <h3>Artificial Intelligence in Healthcare</h3>
+        <p>An introduction to AI and machine learning techniques applied to clinical problems, including NLP for clinical notes, predictive modeling, and ethical considerations in healthcare AI.</p>
+        <div class="course-goal"><strong>Goal →</strong> Students will design and evaluate a prototype AI tool that addresses a real-world clinical workflow challenge.</div>
+        <div class="course-meta">
+          <span>Graduate</span>
+          <span>3 Credits</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUMMER -->
+    <div class="semester-col">
+      <div class="semester-heading">Summer</div>
+      <div class="course-card">
+        <div class="course-code">CS 4250 · Meharry Medical College</div>
+        <h3>Natural Language Processing</h3>
+        <p>Theory and practice of NLP including text classification, named entity recognition, transformer models, and applications in information retrieval and clinical text mining.</p>
+        <div class="course-goal"><strong>Goal →</strong> Students will build an end-to-end NLP pipeline that processes unstructured clinical text into structured, actionable outputs.</div>
+        <div class="course-meta">
+          <span>Graduate</span>
+          <span>3 Credits</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FALL -->
+    <div class="semester-col">
+      <div class="semester-heading">Fall</div>
+      <div class="course-card">
+        <div class="course-code">CS 5420 · Meharry Medical College</div>
+        <h3>Cybersecurity Fundamentals</h3>
+        <p>Covers foundational principles of cybersecurity including intrusion detection, adversarial ML, network security, and emerging GenAI-enabled defense strategies.</p>
+        <div class="course-goal"><strong>Goal →</strong> Students will analyze a real-world cyber incident, design a detection pipeline, and present a post-mortem report with mitigation strategies.</div>
+        <div class="course-meta">
+          <span>Undergraduate / Graduate</span>
+          <span>3 Credits</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top:2rem; font-family:'DM Mono',monospace; font-size:0.68rem; color:var(--muted); letter-spacing:0.08em;">
+    * Updated on March 18, 2026
+  </p>
+</section>
+
+<!-- ════════ CV / BACKGROUND ════════ -->
+<div id="cv">
+  <div class="cv-left">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Background</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="tl-year">2025–<br>Present</div>
+        <div class="tl-content">
+          <h4>Assistant Professor (Tenure-Track)</h4>
+          <p>Dept. of Computer Science &amp; Data Science<br>Meharry Medical College, Nashville, TN</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">2021–2025</div>
+        <div class="tl-content">
+          <h4>Ph.D., Computer Science</h4>
+          <p>Mississippi State University<br>Advisor: Prof. Shahram Rahimi<br>Thesis: "Augmenting Healthcare Communication: Context-Aware AI Frameworks for Clinical Decision Support and Automated Summarization"</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">Prior</div>
+        <div class="tl-content">
+          <h4>M.Sc., Information Systems &amp; Security</h4>
+          <p>Graduate studies in information security and systems</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">Prior</div>
+        <div class="tl-content">
+          <h4>M.Sc., Information Technology</h4>
+          <p>Graduate studies in information technology</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cv-right">
+    <div>
+      <h3>Research Expertise</h3>
+      <div class="skills-list">
+        <span class="skill-tag">Generative AI</span>
+        <span class="skill-tag">Large Language Models</span>
+        <span class="skill-tag">NLP</span>
+        <span class="skill-tag">Healthcare AI</span>
+        <span class="skill-tag">Cybersecurity</span>
+        <span class="skill-tag">Explainable AI</span>
+        <span class="skill-tag">Information Retrieval</span>
+        <span class="skill-tag">Knowledge Graphs</span>
+        <span class="skill-tag">Digital Twins</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">PyTorch</span>
+      </div>
+    </div>
+    <div>
+      <h3>Service &amp; Community</h3>
+      <div class="skills-list">
+        <span class="skill-tag">AAAI Contributor</span>
+        <span class="skill-tag">IEEE Access Author</span>
+        <span class="skill-tag">Frontiers AI Author</span>
+        <span class="skill-tag">OpenReview Reviewer</span>
+        <span class="skill-tag">ACM Member</span>
+        <span class="skill-tag">IEEE Member</span>
+      </div>
+    </div>
+    <a href="cv.pdf" class="cv-download">↓ Download Full CV</a>
+  </div>
+</div>
+
+<!-- ════════ CONTACT ════════ -->
+<section id="contact">
+  <div>
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2>Contact</h2>
+      <div class="section-rule"></div>
+    </div>
+    <p class="contact-intro">Open to research collaborations, speaking invitations, and prospective graduate students interested in AI, Healthcare, and Cybersecurity.</p>
+    <div class="contact-items">
+      <div class="contact-item">
+        <span class="contact-icon">Email</span>
+        <span class="contact-val"><a href="mailto:sneupane@mmc.edu">sneupane@mmc.edu</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">College</span>
+        <span class="contact-val">Meharry Medical College<br>1005 Dr. D.B. Todd Jr. Blvd<br>Nashville, TN 37208</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">Scholar</span>
+        <span class="contact-val"><a href="https://scholar.google.com/citations?user=EbML-C0AAAAJ&hl=en" target="_blank">Google Scholar Profile →</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">DBLP</span>
+        <span class="contact-val"><a href="https://dblp.org/pid/324/4781.html" target="_blank">DBLP Publication List →</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">ResGate</span>
+        <span class="contact-val"><a href="https://www.researchgate.net/profile/Subash-Neupane-5" target="_blank">ResearchGate Profile →</a></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-right-area">
+    <!-- Embedded Google Map -->
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.5!2d-86.8220201!3d36.1385123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886466ab994cf99d%3A0x5736302cd220315e!2s3401%20West%20End%20Avenue!5e0!3m2!1sen!2sus!4v1710000000000"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Meharry Medical College Location">
+      </iframe>
+    </div>
+
+    <div style="padding: 2rem; border: 1px solid rgba(255,255,255,0.12);">
+  <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; color:rgba(245,242,236,0.9); margin-bottom:1rem;">Office Location</h3>
+  <p style="font-size:0.9rem; color:rgba(245,242,236,0.6); line-height:1.8;">
+    Meharry Medical College<br>
+    School of Applied Computational Sciences<br>
+    Department of Computer Science & Data Science<br>
+    3401 West End Ave, Suite 260, Office 7<br>
+    Nashville, TN 37203
+  </p>
+</div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <span>© 2025 Subash Neupane · Meharry Medical College, Nashville</span>
+  <span>
+    <a href="https://scholar.google.com/citations?user=EbML-C0AAAAJ&hl=en" target="_blank">Scholar</a> ·
+    <a href="https://dblp.org/pid/324/4781.html" target="_blank">DBLP</a> ·
+    <a href="https://www.researchgate.net/profile/Subash-Neupane-5" target="_blank">ResearchGate</a>
+  </span>
+</footer>
+
+<script>
+// ── PUBLICATION DATA ──
+const publications = [
+  {"name":"Explainable Intrusion Detection Systems (X-IDS): A Survey of Current Methods, Challenges, and Opportunities","desc":"A comprehensive survey of explainable intrusion detection systems, reviewing current XAI methods applied to IDS, and discussing challenges and future research directions.","year":2022,"venue":"IEEE Access","type":"Journal","domain":"Cybersecurity"},
+  {"name":"Security Considerations in AI-Robotics: A Survey of Current Methods, Challenges, and Opportunities","desc":"Surveys security and privacy challenges at the intersection of AI and robotics, covering attack vectors, defenses, and open research problems in AI-enabled robotic systems.","year":2023,"venue":"IEEE Access","type":"Journal","domain":"Cybersecurity"},
+  {"name":"Localintel: Generating organizational threat intelligence from global and local cyber knowledge","desc":"Proposes a framework that combines global threat intelligence with organization-specific context to generate actionable, localized cyber threat intelligence reports using LLMs.","year":2024,"venue":"17th International Symposium on Foundations & Practice of Security (FPS-2024)","type":"Conference","domain":"Cybersecurity"},
+  {"name":"Impacts and risk of generative AI technology on cyber defense","desc":"Analyzes the dual-use nature of generative AI in cybersecurity, examining risks such as AI-generated attacks and the potential benefits for automated cyber defense.","year":2023,"venue":"arXiv preprint","type":"Preprint","domain":"Gen AI"},
+  {"name":"From Questions to Insightful Answers: Building an Informed Chatbot for University Resources","desc":"Presents an LLM-based informed chatbot system for university resources, enabling students to get accurate, context-aware answers about campus services and academic information.","year":2024,"venue":"IEEE Frontiers in Education (FIE) 2024","type":"Journal","domain":"Gen AI"},
+  {"name":"Patient-Centric Knowledge Graphs: A Survey of Current Methods, Challenges, and Applications","desc":"Surveys knowledge graph construction and querying methods focused on patient-centric healthcare data, covering clinical applications, challenges, and integration with AI systems.","year":2024,"venue":"Frontiers in Artificial Intelligence","type":"Journal","domain":"Gen AI in Medical Science"},
+  {"name":"Blockchain in accounting: challenges and future prospects","desc":"Examines the application of blockchain technology in accounting and auditing, discussing technical barriers, regulatory concerns, and future prospects for adoption.","year":2021,"venue":"International Journal of Blockchains and Cryptocurrencies","type":"Journal","domain":"Gen AI"},
+  {"name":"Use of graph neural networks in aiding defensive cyber operations","desc":"Explores how graph neural networks can model network topology and attack patterns to enhance automated cyber defense and threat detection capabilities.","year":2024,"venue":"arXiv preprint","type":"Preprint","domain":"Cybersecurity"},
+  {"name":"Medinsight: A multi-source context augmentation framework for generating patient-centric medical responses using large language models","desc":"Introduces MedInsight, a RAG-based framework that augments LLMs with multi-source clinical context to generate personalized, accurate patient-centric medical responses.","year":2025,"venue":"ACM Transactions on Computing for Healthcare","type":"Journal","domain":"Gen AI in Medical Science"},
+  {"name":"Towards a HIPAA Compliant Agentic AI System in Healthcare","desc":"Proposes design principles and an architecture for building agentic AI healthcare systems that comply with HIPAA regulations, ensuring patient privacy and data security.","year":2025,"venue":"arXiv preprint","type":"Preprint","domain":"Gen AI in Medical Science"},
+  {"name":"A Temporal Anomaly Detection System for Vehicles utilizing Functional Working Groups and Sensor Channels","desc":"Presents a temporal anomaly detection approach for connected vehicles by analyzing sensor channel data across functional groups to identify cyber-physical attacks.","year":2022,"venue":"IEEE International Conference on Collaboration and Internet Computing (CIC) 2022","type":"Conference","domain":"Cybersecurity"},
+  {"name":"Twinexplainer: Explaining predictions of an automotive digital twin","desc":"Develops TwinExplainer, an XAI framework that generates explanations for predictions made by automotive digital twin models, improving trust and interpretability.","year":2025,"venue":"2025 IEEE Conference on Artificial Intelligence (CAI)","type":"Conference","domain":"Cybersecurity"},
+  {"name":"Explainable intrusion detection systems (X-IDS): a survey of current methods, challenges, and opportunities (arXiv)","desc":"arXiv preprint version of the X-IDS survey covering explainability techniques for intrusion detection, including SHAP, LIME, and attention-based methods.","year":2022,"venue":"arXiv preprint","type":"Preprint","domain":"Cybersecurity"},
+  {"name":"A Survey on Privacy Attacks Against Digital Twin Systems in AI-Robotics","desc":"Surveys privacy attack vectors targeting digital twin systems used in AI-driven robotics, covering model inversion, membership inference, and data poisoning attacks.","year":2024,"venue":"IEEE International Conference on Collaboration and Internet Computing (CIC) 2024","type":"Conference","domain":"Cybersecurity"},
+  {"name":"CLINICSUM: Utilizing Language Models for Generating Clinical Summaries from Patient-Doctor Conversations","desc":"Proposes ClinicSum, a system that leverages large language models to automatically generate structured clinical summaries from patient-doctor dialogue transcripts.","year":2024,"venue":"2024 IEEE International Conference on Big Data (BigData)","type":"Conference","domain":"Gen AI in Medical Science"},
+  {"name":"Security considerations in AI-robotics: A survey of current methods, challenges, and opportunities (alt version)","desc":"Alternative version of the AI-robotics security survey, addressing adversarial attacks, privacy threats, and defense strategies in intelligent robotic systems.","year":2023,"venue":"Challenges and Opportunities (Journal article)","type":"Journal","domain":"Cybersecurity"},
+  {"name":"A White-Box Adversarial Attack Against a Digital Twin","desc":"Demonstrates a white-box adversarial attack methodology against digital twin systems, revealing vulnerabilities in ML-based digital twin models used in cyber-physical systems.","year":2022,"venue":"ACM ACSAC 2022","type":"Conference","domain":"Cybersecurity"},
+  {"name":"Impacts and risk of generative AI technology on cyber defense (2023 version)","desc":"Explores how generative AI tools like ChatGPT and DALL-E can be weaponized for cyberattacks and examines their implications for the future of cyber defense.","year":2023,"venue":"arXiv preprint","type":"Preprint","domain":"Gen AI"},
+  {"name":"A Systematic Review of Multimodal Deep Learning and Machine Learning Fusion Techniques for Prostate Cancer Classification","desc":"Systematically reviews multimodal deep learning and ML fusion approaches for prostate cancer classification, comparing methods using imaging and clinical data.","year":2025,"venue":"medRxiv","type":"Conference","domain":"Gen AI in Medical Science"},
+  {"name":"Impacts and risk of generative AI technology on cyber defense (arXiv version)","desc":"arXiv version analyzing generative AI risks and benefits for cyber defense, covering LLM-enabled threat generation and automated security response scenarios.","year":2023,"venue":"arXiv preprint","type":"Preprint","domain":"Gen AI"},
+  {"name":"LocalIntel: Generating organizational threat intelligence from global and local cyber knowledge (arXiv 2025)","desc":"Extended arXiv version of LocalIntel, detailing the architecture for integrating global CTI feeds with organizational context for tailored threat intelligence generation.","year":2025,"venue":"arXiv preprint","type":"Preprint","domain":"Cybersecurity"},
+  {"name":"Poison Attacks and Adversarial Prompts Against an Informed University Virtual Assistant","desc":"Investigates poisoning attacks and adversarial prompt injection vulnerabilities in LLM-based university virtual assistants, evaluating robustness and mitigation strategies.","year":2024,"venue":"Annual Computer Security Applications Conference (ACSAC) 2024","type":"Conference","domain":"Cybersecurity"},
+  {"name":"Patient Journey Ontology: Representing Medical Encounters for Enhanced Patient-Centric Applications","desc":"Proposes an ontology for representing patient journeys and medical encounters, enabling interoperable, patient-centric clinical applications and knowledge graph integration.","year":2025,"venue":"arXiv preprint","type":"Preprint","domain":"Gen AI in Medical Science"},
+  {"name":"IRSKG: Unified Intrusion Response System Knowledge Graph Ontology for Cyber Defense","desc":"Introduces IRSKG, a unified knowledge graph ontology for intrusion response systems that enables structured representation and reasoning over cyber defense actions.","year":2024,"venue":"2024 IEEE International Conference on Big Data (BigData)","type":"Conference","domain":"Cybersecurity"},
+  {"name":"Bark Plug: The ChatGPT of the Bagley College of Engineering at Mississippi State University","desc":"Presents Bark Plug, a domain-specific ChatGPT-like chatbot for engineering students, providing contextualized Q&A using university-specific knowledge bases.","year":2024,"venue":"2024 ASEE Annual Conference & Exposition","type":"Conference","domain":"Gen AI"},
+  {"name":"Large Language Models for Engineering Patient Journey Knowledge Graphs","desc":"Explores using LLMs to automatically construct patient journey knowledge graphs from clinical records, supporting temporal reasoning and care pathway analysis.","year":2024,"venue":"AAAI 2024 Fall Symposium Series: LLMs for Knowledge Graph Engineering","type":"Conference","domain":"Gen AI in Medical Science"},
+  {"name":"UAT-LITE: Inference-Time Uncertainty-Aware Attention for Pretrained Transformers","desc":"Proposes UAT-LITE, a lightweight uncertainty-aware attention mechanism for transformer models at inference time, improving calibration and reliability of predictions.","year":2026,"venue":"arXiv preprint","type":"Preprint","domain":"Gen AI"},
+  {"name":"MedBayes-Lite: Bayesian Uncertainty Quantification for Safe Clinical Decision Support","desc":"Introduces MedBayes-Lite, a lightweight Bayesian uncertainty quantification framework designed to enable safe and reliable clinical decision support systems.","year":2025,"venue":"arXiv preprint","type":"Preprint","domain":"Gen AI in Medical Science"},
+  {"name":"A Knowledge Graph for Geriatric Patient Journeys","desc":"Constructs a knowledge graph specifically modeling care pathways and medical encounters for geriatric patients, enabling reasoning over complex multi-morbidity scenarios.","year":2025,"venue":"IEEE-EMBS International Conference on Biomedical and Health Informatics (BHI 2025)","type":"Conference","domain":"Gen AI in Medical Science"},
+  {"name":"Barkplug 2.0 and Beyond - a Chatbot for Assisting Students in High DFW Courses","desc":"Extends the Barkplug chatbot system to support students in high dropout/failure/withdrawal courses by providing targeted academic assistance using generative AI.","year":2025,"venue":"2025 ASEE Annual Conference & Exposition","type":"Conference","domain":"Gen AI"},
+  {"name":"Intelligent clinical assistant for personalized responses and clinical summaries","desc":"Presents an intelligent clinical assistant system leveraging LLMs to deliver personalized medical responses and generate structured clinical summaries for healthcare providers.","year":2025,"venue":"Proceedings of the AAAI Conference on Artificial Intelligence 39(28)","type":"Conference","domain":"Gen AI in Medical Science"},
+  {"name":"Augmenting healthcare communication: Context-aware AI frameworks for clinical decision support and automated summarization","desc":"Doctoral dissertation developing context-aware AI frameworks that combine retrieval augmentation and LLMs for clinical decision support and automated healthcare summarization.","year":2025,"venue":"Mississippi State University (Dissertation)","type":"Conference","domain":"Gen AI in Medical Science"},
+  {"name":"Estimating reliability of electric vehicle charging ecosystem using principle of maximum entropy","desc":"Applies the principle of maximum entropy to estimate and model the reliability of electric vehicle charging infrastructure ecosystems under uncertainty.","year":2025,"venue":"Mississippi State University","type":"Conference","domain":"Gen AI"},
+  {"name":"ReVisE: Emulated Visual Outfit Generation from User Reviews using Generative-AI","desc":"Proposes ReVisE, a generative AI system that emulates visual outfit recommendations by synthesizing fashion images based on user review text and preferences.","year":2024,"venue":"SEDE-2024 33rd SEDE Conference: Software & Data Engineering","type":"Conference","domain":"Gen AI"}
+];
+
+// Sort by year descending
+publications.sort((a, b) => b.year - a.year);
+
+// ── POPULATE FILTERS ──
+function populateFilters() {
+  const years = [...new Set(publications.map(p => p.year))].sort((a,b) => b - a);
+  const venues = [...new Set(publications.map(p => p.venue))].sort();
+  const types = [...new Set(publications.map(p => p.type))].sort();
+  const domains = [...new Set(publications.map(p => p.domain))].sort();
+
+  const addOpts = (id, vals) => {
+    const sel = document.getElementById(id);
+    vals.forEach(v => {
+      const o = document.createElement('option');
+      o.value = v;
+      o.textContent = v;
+      sel.appendChild(o);
+    });
+  };
+
+  addOpts('filter-year', years);
+  addOpts('filter-venue', venues);
+  addOpts('filter-type', types);
+  addOpts('filter-domain', domains);
+}
+
+// ── RENDER PUBLICATIONS ──
+function renderPublications() {
+  const fy = document.getElementById('filter-year').value;
+  const fv = document.getElementById('filter-venue').value;
+  const ft = document.getElementById('filter-type').value;
+  const fd = document.getElementById('filter-domain').value;
+
+  const filtered = publications.filter(p => {
+    if (fy && p.year != fy) return false;
+    if (fv && p.venue !== fv) return false;
+    if (ft && p.type !== ft) return false;
+    if (fd && p.domain !== fd) return false;
+    return true;
+  });
+
+  const list = document.getElementById('pub-list');
+  list.innerHTML = '';
+
+  filtered.forEach((p, i) => {
+    const domainClass = p.domain.includes('Medical') ? 'highlight' : '';
+    const venueHighlight = (p.venue.includes('IEEE Access') || p.venue.includes('AAAI') || p.venue.includes('ACM')) ? 'highlight' : '';
+
+    const div = document.createElement('div');
+    div.className = 'pub-item';
+    div.innerHTML = `
+      <div class="pub-year">${p.year}</div>
+      <div class="pub-content">
+        <h4>${p.name}</h4>
+        <div class="pub-venue">${p.venue}</div>
+        <div class="pub-tags">
+          <span class="tag ${venueHighlight}">${p.type}</span>
+          <span class="tag ${domainClass}">${p.domain}</span>
+        </div>
+        <div class="pub-description">${p.desc}</div>
+      </div>
+    `;
+
+    list.appendChild(div);
+  });
+
+  document.getElementById('pub-count').textContent = `Showing ${filtered.length} of ${publications.length} publications`;
+}
+
+// ── EVENT LISTENERS ──
+populateFilters();
+renderPublications();
+
+['filter-year','filter-venue','filter-type','filter-domain'].forEach(id => {
+  document.getElementById(id).addEventListener('change', renderPublications);
+});
+
+document.getElementById('reset-filters').addEventListener('click', () => {
+  ['filter-year','filter-venue','filter-type','filter-domain'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+  renderPublications();
+});
+
+// ── INTERSECTION OBSERVER ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// ── HERO ENTRANCE ──
+window.addEventListener('load', () => {
+  document.querySelectorAll('.hero-left > *').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    setTimeout(() => {
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 200 + i * 120);
+  });
+});
+</script>
+
 </body>
 </html>
